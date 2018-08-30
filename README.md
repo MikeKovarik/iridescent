@@ -1,5 +1,14 @@
 # iridescent
 
+[![NPM](https://img.shields.io/npm/v/iridescent.svg)](https://www.npmjs.com/package/iridescent)
+[![Dependency Status](https://david-dm.org/MikeKovarik/iridescent.svg)](https://david-dm.org/MikeKovarik/iridescent)
+[![devDependency Status](https://david-dm.org/MikeKovarik/iridescent/dev-status.svg)](https://david-dm.org/MikeKovarik/iridescent#info=devDependencies)
+[![Maintenance Status](http://img.shields.io/badge/status-maintained-brightgreen.svg)](https://github.com/MikeKovarik/iridescent/pulse)
+[![Known Vulnerabilities](https://snyk.io/test/github/MikeKovarik/iridescent/badge.svg)](https://snyk.io/test/github/MikeKovarik/iridescent)
+[![Discord](https://img.shields.io/discord/419198557363634178.svg)](https://discord.gg/v2mUmeD)
+[![Gitter](https://badges.gitter.im/MikeKovarik/iridescent.svg)](https://gitter.im/MikeKovarik/iridescent?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+[![Maintainability](https://api.codeclimate.com/v1/badges/f4c0ee405c46126d6325/maintainability)](https://codeclimate.com/github/MikeKovarik/iridescent/maintainability)
+
 🎨 Color conversion, extraction & utility library
 
 ## Installation

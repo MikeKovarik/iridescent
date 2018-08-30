@@ -26,7 +26,7 @@
 		// Returns foreground color (white or black) for given color.
 		static foreground(...args) {
 			var r, g, b;
-			if (isDark(...args))
+			if (this.isDark(...args))
 				r = g = b = 255;
 			else
 				r = g = b = 0;
