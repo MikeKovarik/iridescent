@@ -1,6 +1,6 @@
 {
   "name": "iridescent",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "🎨 Color conversion, extraction & utility library",  "keywords": ["windows", "registry", "regedit", "winreg"],
   "keywords": ["color", "convertor", "conversion", "extract", "extraction", "rgb", "hex", "hsl"],
   "author": "Mike Kovarik",

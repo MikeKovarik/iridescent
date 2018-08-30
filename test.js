@@ -9,17 +9,17 @@ describe('Iridescent', () => {
 
 		it('accepts three arguments (r, g, b)', () => {
 			var result = Iridescent.normalizeRgb(255, 255, 255)
-			assert.deepEqual(result, [255, 255, 255])
+			assert.deepEqual(result, {r: 255, g: 255, b: 255})
 		})
 
 		it('accepts single array ([r, g, b])', () => {
 			var result = Iridescent.normalizeRgb([255, 255, 255])
-			assert.deepEqual(result, [255, 255, 255])
+			assert.deepEqual(result, {r: 255, g: 255, b: 255})
 		})
 
 		it('accepts single array ({r, g, b})', () => {
 			var result = Iridescent.normalizeRgb({r: 255, g: 255, b: 255})
-			assert.deepEqual(result, [255, 255, 255])
+			assert.deepEqual(result, {r: 255, g: 255, b: 255})
 		})
 
 	})

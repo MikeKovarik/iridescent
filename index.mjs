@@ -11,10 +11,10 @@ export default class Iridescent {
 		else if (Array.isArray(args[0]))
 			var [r, g, b] = args[0]
 		else if (typeof args[0] === 'string')
-			var [r, g, b] = this.hexToRgb(args[0])
+			var {r, g, b} = this.hexToRgb(args[0])
 		else
 			var {r, g, b} = args[0]
-		return [r, g, b]
+		return {r, g, b}
 	}
 
 	// Returns foreground color (white or black) for given color.
@@ -24,17 +24,17 @@ export default class Iridescent {
 			r = g = b = 255
 		else
 			r = g = b = 0
-		return [r, g, b]
+		return {r, g, b}
 	}
 
 	static brightness(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		return (r * 299 + g * 587 + b * 114) / 1000
 	}
 
 	// per ITU-R BT.709
 	static luminance(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		return (0.2126 * r + 0.7152 * g + 0.0722 * b)
 	}
 
@@ -50,22 +50,24 @@ export default class Iridescent {
 
 	// Accepts color in any format and simply returns true if it's black (#000; 0,0,0; etc...)
 	static isBlack(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		return r === 0 && g === 0 && b === 0
 	}
 
 	// Accepts color in any format and simply returns true if it's white (#FFF; 255,255,255; etc...)
 	static isWhite(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		return r === 255 && g === 255 && b === 255
 	}
 
 	static difference(...args) {
 		if (args.length === 2) {
-			var [r1, g1, b1] = this.normalizeRgb(args[0])
-			var [r2, g2, b2] = this.normalizeRgb(args[1])
-		} else {
+			var {r: r1, g: g1, b: b1} = this.normalizeRgb(args[0])
+			var {r: r2, g: g2, b: b2} = this.normalizeRgb(args[1])
+		} else if (args.length === 6) {
 			var [r1, g1, b1, r2, g2, b2] = args
+		} else {
+			throw new Error('Invalid args')
 		}
 		var sumOfSquares = 0
 		sumOfSquares += Math.pow(r1 - r2, 2)
@@ -82,7 +84,7 @@ export default class Iridescent {
 
 	// Converts RGB color to HEX format (including # symbol at starts).
 	static rgbToHex(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		var int = (r << 16) + (g << 8) + b
 		return '#' + int.toString(16).padStart(6, '0')
 	}
@@ -99,11 +101,11 @@ export default class Iridescent {
 			var g = parseInt(string.substr(2,2), 16)
 			var b = parseInt(string.substr(4,2), 16)
 		}
-		return [r, g, b]
+		return {r, g, b}
 	}
 
 	static rgbToHsl(...args) {
-		var [r, g, b] = this.normalizeRgb(...args)
+		var {r, g, b} = this.normalizeRgb(...args)
 		r /= 255
 		g /= 255
 		b /= 255
