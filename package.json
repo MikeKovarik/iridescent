@@ -1,8 +1,17 @@
 {
   "name": "iridescent",
-  "version": "1.0.2",
-  "description": "🎨 Color conversion, extraction & utility library",  "keywords": ["windows", "registry", "regedit", "winreg"],
-  "keywords": ["color", "convertor", "conversion", "extract", "extraction", "rgb", "hex", "hsl"],
+  "version": "1.1.0",
+  "description": "🎨 Color conversion, extraction & utility library",
+  "keywords": [
+    "color",
+    "convertor",
+    "conversion",
+    "extract",
+    "extraction",
+    "rgb",
+    "hex",
+    "hsl"
+  ],
   "author": "Mike Kovarik",
   "license": "MIT",
   "homepage": "http://mutiny.cz/iridescent",
